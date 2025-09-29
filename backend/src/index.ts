@@ -41,6 +41,10 @@ app.use((req, res) => {
   res.status(404).json({ message: 'Page Not found' });
 });
 
+app.get("/",(req,res) => {
+  res.send("working backend")
+})
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
