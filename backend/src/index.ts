@@ -36,14 +36,14 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
   res.status(500).json({ message: 'Something went wrong!' });
 });
 
+app.get("/",(req,res) => {
+  res.send("working backend")
+})
+
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({ message: 'Page Not found' });
 });
-
-app.get("/",(req,res) => {
-  res.send("working backend")
-})
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
