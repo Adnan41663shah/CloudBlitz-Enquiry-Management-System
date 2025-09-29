@@ -14,6 +14,11 @@ export const register = async (req: Request, res: Response): Promise<void> => {
       res.status(400).json({ message: 'User already exists with this email' });
       return;
     }
+    const existingAdmin = await User.findOne({ role: validatedData.role });
+    if (existingAdmin) {
+      res.status(400).json({ message: 'Admin already exists.' });
+      return;
+    }
 
     // Create new user
     const user = new User({
