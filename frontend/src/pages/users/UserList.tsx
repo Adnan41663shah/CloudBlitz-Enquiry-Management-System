@@ -18,10 +18,7 @@ import {
   User,
   Crown,
   Search,
-  Filter,
   UserPlus,
-  CheckCircle2,
-  AlertCircle
 } from 'lucide-react';
 import { getInitials, formatDate } from '../../lib/utils';
 import toast from 'react-hot-toast';
